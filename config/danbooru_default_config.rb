@@ -231,6 +231,11 @@ module Danbooru
       User::LEVELS::CONTRIBUTOR
     end
 
+    # Whether new users should start out with safe mode enabled.
+    def new_user_safe_mode?
+      true
+    end
+
     # An array of regexes containing disallowed usernames.
     def user_name_blacklist
       []

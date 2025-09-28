@@ -25,6 +25,7 @@ class UserSignup
       password: params[:user][:password],
       password_confirmation: params[:user][:password_confirmation],
       email_address_attributes: { address: params.dig(:user, :email_address, :address) },
+      enable_safe_mode: Danbooru.config.new_user_safe_mode?.to_s.truthy?
     )
   end
 

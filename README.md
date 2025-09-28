@@ -1,4 +1,30 @@
-[<img src="https://github.com/codespaces/badge.svg" height="20">](https://codespaces.new/danbooru/danbooru?quickstart=1) [![Discord](https://img.shields.io/discord/310432830138089472?label=Discord)](https://discord.gg/danbooru) [![codecov](https://codecov.io/gh/danbooru/danbooru/branch/master/graph/badge.svg)](https://codecov.io/gh/danbooru/danbooru)
+## Changes
+
+Imouto is a fork with an emphasis on small communities. It has some different conventions compared to upstream Danbooru, most of which are configurable, but some enforced. The full list of changes is as follows:
+
+- The user level on signup is now configurable. The new default user level on signup is Contributor.
+- The AI tags container is visible by default on the upload and post edit pages.
+- The default blacklist has been modified (removed `furry -rating:g`)
+- Restored Flash upload functionality.
+- The job to retire inactive tag implications and aliases is now togglable. It is now disabled by default.
+- Added a config option to enable/disable the tag size and wiki constraints on tag implications. They are now disabled by default.
+- Added a config option to toggle post autobanning behaviour. It is now disabled by default.
+- Added a config option to disable signups.
+- Added a config option to toggle the 2FA nag banner for privileged users. It is now disabled by default.
+- Changes have been made to safe mode:
+- - No longer blocks all posts not rated General, just posts with the configured blocked tags. Slight changes to user-facing phrasing to reflect that.
+- - Added a config option to enable safe mode on signup. Enabled by default.
+- Posts have been made more secure:
+- - There is now a config option to block all NSFW (rating Q or E) posts for logged-out users. Enabled by default.
+- - Attempting to view blocked posts is now completely forbidden.
+- - Media assets are no longer visible to logged-out users.
+- - Note: None of this is a silver bullet, metadata may still leak in some places.
+- Added config options to toggle privacy for:
+- - The forum and BURs.
+- - Post versions.
+- - If enabled, the areas in question will not be visible to logged-out users.
+- Fixes:
+- - `config.posts_per_page` now properly applies to the Posts page.
 
 ## Quickstart
 

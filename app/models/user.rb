@@ -93,7 +93,7 @@ class User < ApplicationRecord
   attribute :note_update_count, default: 0
   attribute :unread_dmail_count, default: 0
   attribute :favorite_count, default: 0
-  attribute :per_page, default: 20
+  attribute :per_page, default: Danbooru.config.posts_per_page
   attribute :theme, default: :auto
   attribute :upload_points, default: Danbooru.config.initial_upload_points.to_i
   attribute :bit_prefs, default: 0

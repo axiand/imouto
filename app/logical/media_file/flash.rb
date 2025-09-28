@@ -6,4 +6,12 @@ class MediaFile::Flash < MediaFile
   def dimensions
     [metadata.width.ceil.clamp(1..), metadata.height.ceil.clamp(1..)]
   end
+
+  def preview!(max_width, max_height, **options)
+    nil
+  end
+
+  def ai_tags(autotagger: AutotaggerClient.new)
+    []
+  end
 end

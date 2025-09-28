@@ -955,6 +955,12 @@ module Danbooru
       true
     end
 
+    # Whether to make post version history private (only viewable by registered members).
+    # Useful in conjunction with the other post privacy options.
+    def private_post_versions?
+      true
+    end
+
     # A list of emojis supported in DText.
     def dtext_emojis
       @dtext_emojis ||= {

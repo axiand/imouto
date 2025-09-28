@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 class PostVersionPolicy < ApplicationPolicy
+  def index?
+    if !user.is_member? && Danbooru.config.private_post_versions?.to_s.truthy? return false
+    true
+  end
+
   def undo?
     unbanned? && record.version > 1 && record.post.present? && policy(record.post).visible?
   end

@@ -7,6 +7,7 @@ Imouto is a fork with an emphasis on small communities. It has some different co
 - The default blacklist has been modified (removed `furry -rating:g`)
 - Restored Flash upload functionality.
 - The job to retire inactive tag implications and aliases is now togglable. It is now disabled by default.
+- Made changes to implicit tags. In essence, rather than being hidden from the page, blocked posts are now entirely skipped over in search results.
 - Added a config option to enable/disable the tag size and wiki constraints on tag implications. They are now disabled by default.
 - Added a config option to toggle post autobanning behaviour. It is now disabled by default.
 - Added a config option to disable signups.

@@ -433,6 +433,11 @@ module Danbooru
       []
     end
 
+    # Whether to require a signup to see posts rated Questionable and Explicit.
+    def require_signup_for_nsfw?
+      true
+    end
+
     # If a new user uploads a post with any of these AI tags, the post will be blocked.
     def new_uploader_blocked_ai_tags
       # "tag1,>50% or tag2,>75% or tag3,>90%"

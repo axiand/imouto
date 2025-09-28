@@ -1945,6 +1945,7 @@ class Post < ApplicationRecord
   end
 
   def levelblocked?(user = CurrentUser.user)
+    if user.is_anonymous? && Danbooru.config.safe_mode_restricted_tags.any? { |tag| tag.in?(tag_array) } return true
     if Danbooru.config.require_signup_for_nsfw?.to_s.truthy? && user.is_anonymous? && ( rating == "q" || rating == "e" ) return true
     user.id != uploader_id && !user.is_gold? && tag_string.match?(RESTRICTED_TAGS_REGEX)
   end

@@ -4,7 +4,7 @@ Imouto is a fork with an emphasis on small communities. It has some different co
 
 - The user level on signup is now configurable. The new default user level on signup is Contributor.
 - The AI tags container is visible by default on the upload and post edit pages.
-- The default blacklist has been modified (removed `furry -rating:g`)
+- The default blacklist has been modified (removed `furry -rating:g`). It is also now configurable.
 - Restored Flash upload functionality.
 - The job to retire inactive tag implications and aliases is now togglable. It is now disabled by default.
 - Made changes to implicit tags. In essence, rather than being hidden from the page, blocked posts are now entirely skipped over in search results.

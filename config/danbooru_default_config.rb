@@ -459,6 +459,11 @@ module Danbooru
       []
     end
 
+    # The default blacklist to apply on signup. Each item of the array is a single blacklist rule.
+    def default_blacklist
+      ["guro", "scat"]
+    end
+
     # Tag searches with less than this many results will be considered "small
     # searches" and optimized specially. This is unnecessary unless you have a
     # Danbooru-sized database.

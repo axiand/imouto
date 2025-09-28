@@ -74,7 +74,7 @@
       </div>
     <% end %>
 
-    <% if CurrentUser.user.is_approver? && !CurrentUser.user.has_2fa? && controller_name != "totp" %>
+    <% if CurrentUser.user.is_approver? && !CurrentUser.user.has_2fa? && controller_name != "totp" && Danbooru.config.enable_2fa_nag?.to_s.truthy? %>
       <div class="notice notice-error notice-large">
         <h2>2FA Required</h2>
         <p>

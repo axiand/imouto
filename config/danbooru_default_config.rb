@@ -961,6 +961,11 @@ module Danbooru
       true
     end
 
+    # Whether to enable the 2FA nag banner.
+    def enable_2fa_nag?
+      false
+    end
+
     # A list of emojis supported in DText.
     def dtext_emojis
       @dtext_emojis ||= {

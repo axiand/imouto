@@ -47,14 +47,14 @@ module Danbooru
     # The name of this Danbooru.
     def app_name
       if CurrentUser.safe_mode?
-        "Safebooru"
+        "Safeouto"
       else
-        "Danbooru"
+        "Imouto"
       end
     end
 
     def canonical_app_name
-      "Danbooru"
+      "Imouto"
     end
 
     # A list of alternate domains for your site, if your site is accessible under multiple domains. For example,
@@ -185,7 +185,7 @@ module Danbooru
     end
 
     def source_code_url
-      "https://github.com/danbooru/danbooru"
+      "https://github.com/axiand/imouto"
     end
 
     def issues_url
@@ -646,7 +646,7 @@ module Danbooru
 
     # Whether the Gold account upgrade page should be enabled.
     def user_upgrades_enabled?
-      true
+      false
     end
 
     # Whether to enable API rate limits.

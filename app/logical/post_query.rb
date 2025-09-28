@@ -211,7 +211,7 @@ class PostQuery
     tags = []
 
     # Safe mode restricted tags
-    tags = [Danbooru.config.safe_mode_restricted_tags.map { |tag| -AST.tag(tag) }, *tags]
+    tags = [Danbooru.config.safe_mode_restricted_tags.map { |tag| -AST.tag(tag) }, *tags] if safe_mode?
 
     if current_user.is_anonymous? && Danbooru.config.require_signup_for_nsfw?.to_s.truthy?
       tags = [AST.metatag("is", "sfw"), *tags]

@@ -2,8 +2,12 @@
 
 class MediaAssetPolicy < ApplicationPolicy
   def index?
-    true
+    user.is_member?
   end
+
+  def show?
+    user.is_member?
+  def
 
   def destroy?
     user.is_admin?

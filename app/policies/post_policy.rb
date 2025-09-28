@@ -17,6 +17,10 @@ class PostPolicy < ApplicationPolicy
     unbanned? && record.uploader == user
   end
 
+  def show?
+    user.is_member? || record.visible?(user)
+  end
+
   def revert?
     update?
   end

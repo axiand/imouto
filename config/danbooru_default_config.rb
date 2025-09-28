@@ -944,6 +944,12 @@ module Danbooru
       false
     end
 
+    # Whether to disable signups.
+    # If true, only existing users will be able to create new accounts.
+    def disable_signups?
+      false
+    end
+
     # A list of emojis supported in DText.
     def dtext_emojis
       @dtext_emojis ||= {

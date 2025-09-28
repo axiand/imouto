@@ -2,10 +2,12 @@
 
 class UserPolicy < ApplicationPolicy
   def create?
+    if Danbooru.config.disable_signups?.to_s.truthy? && !user.is_member? return false
     user.is_anonymous?
   end
 
   def new?
+    if Danbooru.config.disable_signups?.to_s.truthy? && !user.is_member? return false
     user.is_anonymous?
   end
 

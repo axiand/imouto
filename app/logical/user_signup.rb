@@ -44,7 +44,7 @@ class UserSignup
     if requires_verification?
       User::Levels::RESTRICTED
     else
-      User::Levels::MEMBER
+      Danbooru.config.default_user_level
     end
   end
 

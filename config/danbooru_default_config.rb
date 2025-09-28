@@ -225,6 +225,12 @@ module Danbooru
       true
     end
 
+    # The default user level on signup. Probably change this if you're running a public board.
+    # https://danbooru.donmai.us/wiki_pages/help:users
+    def default_user_level
+      User::LEVELS::CONTRIBUTOR
+    end
+
     # An array of regexes containing disallowed usernames.
     def user_name_blacklist
       []

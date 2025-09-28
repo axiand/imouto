@@ -430,7 +430,7 @@ module Danbooru
 
     # The number of posts displayed per page.
     def posts_per_page
-      20
+      40
     end
 
     # Tags that are not visible in safe mode.

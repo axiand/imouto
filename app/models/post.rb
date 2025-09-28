@@ -295,6 +295,8 @@ class Post < ApplicationRecord
     end
 
     def autoban
+      return unless Danbooru.config.do_post_autoban?.to_s.truthy?
+
       if has_tag?("paid_reward") || tags.any? { |tag| tag.artist? && tag.artist&.is_banned? }
         self.is_banned = true
       end

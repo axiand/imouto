@@ -939,6 +939,11 @@ module Danbooru
       false
     end
 
+    # Whether to ban a post on upload when it meets certain criteria (paid reward, banned artist...)
+    def do_post_autoban?
+      false
+    end
+
     # A list of emojis supported in DText.
     def dtext_emojis
       @dtext_emojis ||= {

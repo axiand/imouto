@@ -910,6 +910,11 @@ module Danbooru
     def winter_sale_forum_topic_id
     end
 
+    # Whether to disable the job that retires old and unused tag relationships.
+    def disable_tag_retirement_job?
+      true
+    end
+
     # A list of emojis supported in DText.
     def dtext_emojis
       @dtext_emojis ||= {

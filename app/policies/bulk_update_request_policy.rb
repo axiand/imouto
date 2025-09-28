@@ -1,6 +1,16 @@
 # frozen_string_literal: true
 
 class BulkUpdateRequestPolicy < ApplicationPolicy
+  def index?
+    if !user.is_member? && Danbooru.config.private_forum?.to_s.truthy? return false
+    true
+  end
+
+  def show?
+    if !user.is_member? && Danbooru.config.private_forum?.to_s.truthy? return false
+    true
+  end
+
   def create?
     unbanned? && (record.forum_topic.blank? || policy(record.forum_topic).reply?)
   end

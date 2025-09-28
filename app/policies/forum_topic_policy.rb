@@ -2,10 +2,12 @@
 
 class ForumTopicPolicy < ApplicationPolicy
   def index?
+    if !user.is_member? && Danbooru.config.private_forum?.to_s.truthy? return false
     true
   end
 
   def show?
+    if !user.is_member? && Danbooru.config.private_forum?.to_s.truthy? return false
     user.level >= record.min_level_id
   end
 

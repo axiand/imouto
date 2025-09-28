@@ -950,6 +950,11 @@ module Danbooru
       false
     end
 
+    # Whether to make the forum (and associated services like BURs) private (only viewable by registered members).
+    def private_forum?
+      true
+    end
+
     # A list of emojis supported in DText.
     def dtext_emojis
       @dtext_emojis ||= {

@@ -1,6 +1,16 @@
 # frozen_string_literal: true
 
 class ForumPostVotePolicy < ApplicationPolicy
+  def index?
+    if !user.is_member? && Danbooru.config.private_forum?.to_s.truthy? return false
+    true
+  end
+
+  def show?
+    if !user.is_member? && Danbooru.config.private_forum?.to_s.truthy? return false
+    true
+  end
+
   def create?
     unbanned? && policy(record.forum_post).votable?
   end

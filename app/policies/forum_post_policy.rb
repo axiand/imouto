@@ -2,6 +2,7 @@
 
 class ForumPostPolicy < ApplicationPolicy
   def index?
+    if !user.is_member? && Danbooru.config.private_forum?.to_s.truthy? return false
     true
   end
 

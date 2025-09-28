@@ -119,6 +119,8 @@ class TagImplication < TagRelationship
     # applies to general tags. Doesn't apply when either tag is empty to allow
     # implying new tags.
     def meets_tag_size_requirements
+      return unless Danbooru.config.implication_size_requirements?.to_s.truthy?
+
       return unless antecedent_tag.general?
       return if antecedent_tag.empty? || consequent_tag.empty?
 
@@ -135,6 +137,8 @@ class TagImplication < TagRelationship
     end
 
     def has_wiki_page
+      return unless Danbooru.config.implication_needs_wiki?.to_s.truthy?
+
       if !antecedent_tag.empty? && antecedent_wiki.blank?
         errors.add(:base, "[[#{antecedent_name}]] must have a wiki page")
       end

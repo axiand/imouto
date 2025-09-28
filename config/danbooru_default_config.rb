@@ -920,6 +920,20 @@ module Danbooru
       true
     end
 
+    # If true, tag implications will require wiki pages to be created.
+    # Disabling drastically increases workflow speed at the cost of information loss.
+    def implication_needs_wiki?
+      false
+    end
+
+    # Whether to enable the size restrictions on tag implications.
+    # app/models/tag_implication.rb
+    # Disabling comes in handy for small, new boards where these limitations will
+    # frequently trigger due to not having many posts.
+    def implication_size_requirements?
+      false
+    end
+
     # A list of emojis supported in DText.
     def dtext_emojis
       @dtext_emojis ||= {

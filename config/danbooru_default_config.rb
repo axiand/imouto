@@ -228,7 +228,7 @@ module Danbooru
     # The default user level on signup. Probably change this if you're running a public board.
     # https://danbooru.donmai.us/wiki_pages/help:users
     def default_user_level
-      User::LEVELS::CONTRIBUTOR
+      User::Levels::CONTRIBUTOR
     end
 
     # Whether new users should start out with safe mode enabled.
